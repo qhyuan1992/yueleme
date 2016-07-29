@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <include layout="@layout/header"/>
+
+    <RelativeLayout
+        android:id="@+id/help"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/topTitle"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="帮助与反馈"
+            android:textSize="18sp"
+            android:layout_marginLeft="30dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#ccc"
+            android:layout_alignParentBottom="true"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/aboutUs"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/help"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="关于我们"
+            android:textSize="18sp"
+            android:layout_marginLeft="30dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#ccc"
+            android:layout_alignParentBottom="true"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/exit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/aboutUs"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="退出登录"
+            android:textSize="18sp"
+            android:layout_marginLeft="30dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#ccc"
+            android:layout_alignParentBottom="true"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>
+

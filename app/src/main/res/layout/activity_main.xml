@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout_main"
+        android:orientation="vertical" >
+
+        <include layout="@layout/header" />
+
+        <FrameLayout
+            android:id="@+id/maincontainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+        </FrameLayout>
+
+        <!-- tab -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="#aaa"
+            />
+
+        <RadioGroup
+            android:id="@+id/main_tab"
+            android:background="#fff"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+            <RadioButton
+                android:id="@+id/rb_home"
+                android:text="主页"
+                android:checked="true"
+                android:textColor="@color/selector_maintable_text"
+                android:drawableTop="@drawable/selector_main_tab_home"
+                style="@style/main_tab_bottom"/>
+            <RadioButton
+                android:id="@+id/rb_message"
+                android:text="消息"
+                android:textColor="@color/selector_maintable_text"
+                android:drawableTop="@drawable/selector_main_tab_message"
+                style="@style/main_tab_bottom"/>
+            <RadioButton
+                style="@style/main_tab_bottom"/>
+            <RadioButton
+                android:id="@+id/rb_datelist"
+                android:text="约单"
+                android:textColor="@color/selector_maintable_text"
+                android:drawableTop="@drawable/selector_main_tab_datelist"
+                style="@style/main_tab_bottom"
+                android:checked="false" />
+            <RadioButton
+                android:id="@+id/rb_mine"
+                android:text="我的"
+                android:textColor="@color/selector_maintable_text"
+                android:drawableTop="@drawable/selector_main_tab_mine"
+                style="@style/main_tab_bottom"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <ImageView
+        android:padding="4dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/iv_publish"
+        android:src="@drawable/selector_main_tab_publish"
+        android:background="@drawable/ic_main_tab_publish_bkg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
+

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/layout_appointment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp">
+
+
+        <TextView
+            android:id="@+id/title_appointment"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:textSize="18sp"
+            android:text="海岸城电影院-大鱼海棠"
+            android:textColor="@color/title_color"
+            />
+
+        <RelativeLayout
+            android:id="@+id/time_address_appointment"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/title_appointment"
+            >
+
+            <ImageView
+                android:id="@+id/iv_address"
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:src="@drawable/icon_location"
+                android:scaleType="centerCrop"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:id="@+id/tx_address"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:textSize="15sp"
+                android:text="XXXXXXXX"
+                android:textColor="@color/text_color"
+                android:layout_toRightOf="@+id/iv_address"
+                android:layout_marginLeft="4dp"
+                />
+
+            <ImageView
+                android:id="@+id/iv_time"
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icon_time"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tx_address"
+                android:layout_marginLeft="40dp"
+                />
+
+            <TextView
+                android:id="@+id/tx_time"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:textSize="15sp"
+                android:textColor="@color/text_color"
+                android:layout_toRightOf="@+id/iv_time"
+                android:layout_marginLeft="4dp"
+                android:text="19:20 今天"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_picture"
+            android:layout_width="match_parent"
+            android:layout_marginTop="18dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/time_address_appointment"
+            >
+
+            <ImageView
+                android:id="@+id/iv_first"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:src="@drawable/iv_user_image_default"
+                android:scaleType="centerCrop"
+                />
+
+            <ImageView
+                android:id="@+id/iv_second"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:src="@drawable/iv_user_image_default"
+                android:scaleType="centerCrop"
+                android:layout_toRightOf="@+id/iv_first"
+                android:layout_marginLeft="6dp"
+                />
+
+            <ImageView
+                android:id="@+id/iv_third"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:src="@drawable/iv_user_image_default"
+                android:scaleType="centerCrop"
+                android:layout_toRightOf="@+id/iv_second"
+                android:layout_marginLeft="6dp"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tx_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_picture"
+            android:layout_marginTop="18dp"
+            android:text="想去看这部电影的~约\n看完可以一起吃夜宵"
+            android:textSize="18sp"
+            android:textColor="@color/text_color"
+            />
+
+        <RelativeLayout
+            android:id="@+id/layout_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_below="@+id/tx_text"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="40dp"
+            >
+
+            <RelativeLayout
+                android:id="@+id/layout_payWay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_payWay"
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icon_pay"
+                    android:scaleType="centerCrop"
+                    />
+
+                <TextView
+                    android:id="@+id/tx_payWay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="AA"
+                    android:textSize="15sp"
+                    android:textColor="@color/assistant_color"
+                    android:layout_toRightOf="@+id/iv_payWay"
+                    android:layout_marginLeft="2dp"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_department"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/layout_payWay"
+                android:layout_marginLeft="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_department"
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icon_department"
+                    android:scaleType="centerCrop"
+                    />
+
+                <TextView
+                    android:id="@+id/tx_department"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="SNG"
+                    android:textSize="15sp"
+                    android:textColor="@color/assistant_color"
+                    android:layout_toRightOf="@+id/iv_department"
+                    android:layout_marginLeft="2dp"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_people"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/layout_department"
+                android:layout_marginLeft="16dp"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_people"
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icon_sexneed"
+                    android:scaleType="centerCrop"
+                    />
+
+                <TextView
+                    android:id="@+id/tx_people"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="男3女4"
+                    android:textSize="15sp"
+                    android:textColor="@color/assistant_color"
+                    android:layout_toRightOf="@+id/iv_people"
+                    android:layout_marginLeft="2dp"
+                    />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/background_color"
+        android:layout_below="@+id/layout_appointment"
+        />
+
+</RelativeLayout>

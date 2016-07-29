@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+    <!--主页每一个帖子的布局-->
+    <RelativeLayout
+        android:id="@+id/businessCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/detail_civ_user_image"
+                android:layout_height="30dp"
+                android:layout_width="30dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="24dp"
+                android:layout_marginRight="6dp"
+                android:src="@drawable/iv_user_image_default"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toRightOf="@+id/detail_civ_user_image"
+                android:layout_marginLeft="6dp"
+                >
+
+                <TextView
+                    android:id="@+id/detail_tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bumble Bee"
+                    android:textSize="18sp"
+                    android:textColor="@color/main_color"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="3dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_date_createtime"
+                    android:layout_width="wrap_content"
+                    android:text="07:14"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_color"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="3dp"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+       <!-- <TextView
+            android:visibility="gone"
+            android:id="@+id/myFollowerSummary"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:text="SNG|喜欢桌游和一个人的房间"
+            android:textSize="10sp"
+            android:textColor="@color/text_color"
+            android:gravity="center_vertical"
+            android:layout_marginTop="3dp"
+            />-->
+
+    </RelativeLayout>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/item_date"
+        android:layout_below="@+id/businessCard"
+        />
+
+
+
+</RelativeLayout>

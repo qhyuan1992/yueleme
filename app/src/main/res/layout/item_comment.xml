@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    >
+
+    <TextView
+        android:id="@+id/tx_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Bumble Bee: "
+        android:textColor="@color/main_color"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
+        />
+
+    <TextView
+        android:id="@+id/tx_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
+        android:textSize="18sp"
+        android:layout_toRightOf="@+id/tx_username"
+        android:layout_marginLeft="16dp"
+        />
+
+    <include
+        layout="@layout/split_line_thin"/>
+
+</RelativeLayout>

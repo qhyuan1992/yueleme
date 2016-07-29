@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:paddingBottom="100dp"
+    android:background="@android:color/transparent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp" >
+
+        <Button
+            android:textColor="@color/selector_publish_text"
+            android:text="发起约单"
+            android:id="@+id/btn_normalPublishDate"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="30dp"
+            android:clickable="true"
+            android:background="@drawable/bkg_publish" />
+
+        <Button
+            android:text="随机配友"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/selector_publish_text"
+            android:id="@+id/btn_randomPublishDate"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:clickable="true"
+            android:background="@drawable/bkg_publish" />
+    </LinearLayout>
+
+</RelativeLayout>

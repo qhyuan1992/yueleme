@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="112dp">
+
+    <!--图片墙展示每一个条目的布局-->
+    <ImageView
+        android:id="@+id/ivPictureWall"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/topStoryTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:textSize="22sp"
+        android:textColor="#fff"
+        android:layout_margin="20dp"
+        />
+
+
+</RelativeLayout>

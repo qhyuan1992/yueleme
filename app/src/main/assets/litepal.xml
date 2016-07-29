@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <dbname value="yueleme" ></dbname>
+
+    <version value="1" ></version>
+
+        <list>
+            <mapping class="com.mini.yueleme.data.FollowedUser"></mapping>
+            <mapping class="com.mini.yueleme.data.DateTarget"></mapping>
+
+            <mapping class="com.mini.yueleme.data.NewDateItem"></mapping>
+            <mapping class="com.mini.yueleme.data.HotDateItem"></mapping>
+
+            <mapping class="com.mini.yueleme.data.MessageItem"></mapping>
+
+        </list>
+
+</litepal>

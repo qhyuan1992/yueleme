@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.mini.yueleme.widget.SegmentedControlView
+        android:background="@android:color/transparent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/segment_control"
+        android:layout_gravity="center_vertical"
+        xmlns:ascv="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+
+        ascv:ascv_defaultSelection="0"
+        ascv:ascv_selectedColor="@color/main_color"
+        ascv:ascv_selectedTextColor="@color/background_color"
+        ascv:ascv_unselectedColor="@color/light_grey"
+        ascv:ascv_unselectedTextColor="@color/background_color"
+        ascv:ascv_items="@array/three_state_option"
+        />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/homeSwipeRefreshLayout"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/homeRecyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

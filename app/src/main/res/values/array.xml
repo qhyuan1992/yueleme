@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="department">
+        <item>SNG</item>
+        <item>TEG</item>
+        <item>OMG</item>
+        <item>WXG</item>
+        <item>MIG</item>
+        <item>CDG</item>
+        <item>IEG</item>
+    </string-array>
+
+    <string-array name="single">
+        <item>单身</item>
+        <item>非单身</item>
+    </string-array>
+
+    <string-array name="sex">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+</resources>

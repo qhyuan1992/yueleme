@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!--个人信息的layout-->
+
+    <RelativeLayout
+        android:id="@+id/topTitle"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/backImage"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:src="@drawable/selector_back"
+            />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="@string/personal_information"/>
+
+        <Button
+            android:id="@+id/editBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:text="@string/edit"
+            android:background="@android:color/transparent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.12dp"
+            android:background="#ccc"
+            android:layout_alignParentBottom="true"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/headPortrait"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/headPortraitTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/head_portrait"
+            android:textSize="15sp"
+            android:padding="12dp"
+            android:layout_centerVertical="true"
+            />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/headPortraitContent"
+            android:layout_height="48dp"
+            android:layout_width="48dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/iv_user_image_default"
+            />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        />
+
+    <RelativeLayout
+        android:id="@+id/nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/nicknameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/nickname"
+            android:textSize="15dp"
+            android:padding="12dp"
+            android:layout_centerVertical="true"
+            />
+        <!--这里先用昵称填补,之后在设置具体的用户昵称-->
+        <TextView
+            android:id="@+id/nicknameContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/nickname"
+            android:textSize="15dp"
+            android:padding="12dp"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        />
+
+    <RelativeLayout
+        android:id="@+id/sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/sexTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/sex"
+            android:textSize="15dp"
+            android:padding="12dp"
+            android:layout_centerVertical="true"
+            />
+        <!--这里先用昵称填补,之后在设置具体的用户昵称-->
+        <TextView
+            android:id="@+id/sexContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/sex"
+            android:textSize="15dp"
+            android:padding="12dp"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        />
+
+    <RelativeLayout
+        android:id="@+id/age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/ageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/age"
+            android:textSize="15dp"
+            android:padding="12dp"
+            android:layout_centerVertical="true"
+            />
+        <!--这里先用昵称填补,之后在设置具体的用户昵称-->
+        <TextView
+            android:id="@+id/ageContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/age"
+            android:textSize="15dp"
+            android:padding="12dp"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        />
+
+    <RelativeLayout
+        android:id="@+id/phoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/phoneNumberTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/phoneNumber"
+            android:layout_centerVertical="true"
+            android:textSize="15dp"
+            android:padding="12dp"
+            />
+        <TextView
+            android:id="@+id/phoneNumberContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/phoneNumber"
+            android:textSize="15dp"
+            android:padding="12dp"
+
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        />
+
+    <RelativeLayout
+        android:id="@+id/personalizedSignature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/personalizedSignatureTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/personalizedSignature"
+            android:layout_centerVertical="true"
+            android:textSize="15dp"
+            android:padding="12dp"
+            />
+        <TextView
+            android:id="@+id/personalizedSignatureContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/personalizedSignature"
+            android:layout_centerVertical="true"
+            android:textSize="15dp"
+            android:padding="12dp"
+
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        />
+
+    <RelativeLayout
+        android:id="@+id/credit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/creditTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/credit"
+            android:textSize="15dp"
+            android:padding="12dp"
+            />
+        <TextView
+            android:id="@+id/creditContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/credit"
+            android:textSize="15dp"
+            android:padding="12dp"
+
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        />
+
+    <RelativeLayout
+        android:id="@+id/BG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/BGTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/BG"
+            android:textSize="15dp"
+            android:padding="12dp"
+            />
+        <TextView
+            android:id="@+id/BGContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/BG"
+            android:textSize="15dp"
+            android:padding="12dp"
+
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        />
+
+    <RelativeLayout
+        android:id="@+id/department"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/departmentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/department"
+            android:textSize="15dp"
+            android:padding="12dp"
+            />
+        <TextView
+            android:id="@+id/departmentContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/department"
+            android:textSize="15dp"
+            android:padding="12dp"
+
+            />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

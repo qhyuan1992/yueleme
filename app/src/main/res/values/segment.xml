@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="test_attr_unselected_text_color">#FFFBFB</color>
+    <color name="test_attr_selected_text_color">#FFFBFB</color>
+    <color name="test_attr_selected_color">#85BFF0</color>
+    <color name="test_attr_unselected_color">#CDCDCD</color>
+
+    <string-array name="three_state_option">
+        <item> 最  新 </item>
+        <item> 最  热</item>
+    </string-array>
+
+    <string-array name="three_state_values">
+        <item> 1 </item>
+        <item> 2</item>
+        <item> 3 </item>
+    </string-array>
+
+
+    <string-array name="my_two_state_option">
+        <item> 我发布的 </item>
+        <item> 我参与的</item>
+    </string-array>
+</resources>

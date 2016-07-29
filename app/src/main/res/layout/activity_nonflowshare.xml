@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+   	<TextView
+   	    android:layout_width="match_parent"
+   	    android:layout_height="wrap_content"
+   	    android:layout_marginTop="20dp"
+   	    android:text="@string/non_flows_top_titile"
+   	    android:singleLine="true"
+   	    android:layout_marginLeft="28dp"
+   	    android:textSize="14sp"
+   	    android:textColor="#999999" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/one" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="14dp"
+            android:gravity="center_vertical"
+            android:text="@string/non_flows_step_1"
+            android:textColor="#04a8f4"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_my_hotpoint_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="82dp"
+        android:layout_marginTop="10dp"
+        android:text="YLM_wifi"
+        android:textColor="#333333"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/two" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="14dp"
+            android:gravity="center_vertical"
+            android:text="@string/non_flows_step_2"
+            android:textColor="#04a8f4"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_net"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="82dp"
+        android:layout_marginTop="10dp"
+        android:text="qhyuang1992.com"
+        android:textColor="#333333"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="82dp"
+        android:layout_marginTop="10dp"
+        android:text="或者扫描以下二维码"
+        android:textColor="#04a8f4"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/iv_qrcode"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/img_loading" />
+    
+    <TextView
+   	    android:layout_width="match_parent"
+   	    android:layout_height="wrap_content"
+   	    android:layout_marginTop="5dp"
+   	    android:text="@string/non_flows_bottom_titile"
+   	    android:singleLine="true"
+   	    android:layout_marginLeft="28dp"
+   	    android:textSize="14sp"
+   	    android:textColor="#999999" />
+
+</LinearLayout>

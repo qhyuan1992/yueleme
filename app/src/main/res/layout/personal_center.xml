@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/headPortrait"
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <ImageView
+                    android:id="@+id/headPortraitBG"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/iv_user_image_default"
+                    android:scaleType="centerCrop"
+                    android:alpha="0.1"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/headPortraitImage"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/iv_user_image_default"/>
+
+                <TextView
+                    android:id="@+id/nicknameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/headPortraitImage"
+                    android:text="Bumble Bee"
+                    android:textSize="15sp"
+                    android:textColor="@color/main_color"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <include
+                    layout="@layout/split_line_thin"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/sex"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/headPortrait"
+                android:layout_height="@dimen/item_height">
+
+                <TextView
+                    android:id="@+id/sexTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="性别"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_color"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignParentLeft="true"
+                    />
+
+                <TextView
+                    android:id="@+id/sexContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="男"
+                    android:textColor="@color/light_grey"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <Spinner
+                    android:background="@drawable/selector_edittext"
+                    android:id="@+id/spinner_sex"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:entries="@array/sex"
+                    android:layout_alignParentRight="true"
+                    />
+
+                <include
+                    layout="@layout/split_line_thin"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/personalizedSignature"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/sex"
+                android:layout_height="@dimen/item_height">
+
+                <TextView
+                    android:id="@+id/personalizedSignatureTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="签名"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_color"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignParentLeft="true"
+                    />
+
+                <TextView
+                    android:id="@+id/personalizedSignatureContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="喜欢桌游和一个人的房间"
+                    android:textSize="15sp"
+                    android:textColor="@color/light_grey"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <EditText
+                    android:background="@drawable/selector_edittext"
+                    android:id="@+id/personalizedSignatureEdit"
+                    android:visibility="gone"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:singleLine="true"
+                    android:textColor="@color/light_grey"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <include
+                    layout="@layout/split_line_thin"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/telNum"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/personalizedSignature"
+                android:layout_height="@dimen/item_height">
+
+                <TextView
+                    android:id="@+id/telNumTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="手机"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_color"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignParentLeft="true"
+                    />
+
+                <TextView
+                    android:id="@+id/telNumContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/light_grey"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <EditText
+                    android:background="@drawable/selector_edittext"
+                    android:id="@+id/telNumEdit"
+                    android:visibility="gone"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:inputType="phone"
+                    android:textColor="@color/light_grey"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <include
+                    layout="@layout/split_line_thin"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/department"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/telNum"
+                android:layout_height="@dimen/item_height">
+
+                <TextView
+                    android:id="@+id/departmentTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="部门"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_color"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignParentLeft="true"
+                    />
+
+                <TextView
+                    android:id="@+id/departmentContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SNG"
+                    android:textSize="15sp"
+                    android:textColor="@color/light_grey"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <Spinner
+                    android:background="@drawable/selector_edittext"
+                    android:id="@+id/spinner_department"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:entries="@array/department"
+                    android:layout_alignParentRight="true"
+                    >
+
+
+                </Spinner>
+
+                <include
+                    layout="@layout/split_line_thin"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/emotion"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/department"
+                android:layout_height="@dimen/item_height">
+
+                <TextView
+                    android:id="@+id/emotionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="情感"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_color"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignParentLeft="true"
+                    />
+
+                <TextView
+                    android:id="@+id/emotionContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="单身"
+                    android:textSize="15sp"
+                    android:textColor="@color/light_grey"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <Spinner
+                    android:background="@drawable/selector_edittext"
+                    android:id="@+id/spinner_emotion"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:entries="@array/single"
+                    android:layout_alignParentRight="true"
+                    />
+
+                <include
+                    layout="@layout/split_line_thin"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/emotion"
+                android:layout_height="@dimen/item_height">
+
+                <TextView
+                    android:id="@+id/ageTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="年龄"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_color"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignParentLeft="true"
+                    />
+
+                <TextView
+                    android:id="@+id/ageContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="21"
+                    android:textSize="15sp"
+                    android:textColor="@color/light_grey"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+
+                    />
+
+                <EditText
+                    android:id="@+id/ageEdit"
+                    android:background="@drawable/selector_edittext"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:textSize="15sp"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/light_grey"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    />
+            </RelativeLayout>
+
+            <include
+                layout="@layout/split_line_wide"/>
+
+            <RelativeLayout
+                android:id="@+id/settings"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/age">
+                <TextView
+                    android:id="@+id/settingsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_color"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignParentLeft="true"
+                    />
+
+                <ImageView
+                    android:id="@+id/settingsContent"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/iv_arraw"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    />
+            </RelativeLayout>
+            <include
+                layout="@layout/split_line_wide"/>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

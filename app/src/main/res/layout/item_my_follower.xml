@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    >
+
+    <!--我的关注每一条信息的layout-->
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/myFollowerPicture"
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginRight="6dp"
+        android:src="@drawable/iv_user_image_default"
+        />
+    
+    <TextView
+        android:id="@+id/detail_tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:text="Jesse"
+        android:textSize="14sp"
+        android:textColor="@color/main_color"
+        android:gravity="center_vertical"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/myFollowerPicture"
+        android:layout_alignTop="@+id/myFollowerPicture"
+        />
+
+    <TextView
+        android:id="@+id/myFollowerSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:text="SNG|喜欢桌游和一个人的房间"
+        android:layout_toRightOf="@+id/myFollowerPicture"
+        android:layout_below="@+id/detail_tv_user_name"
+        android:textSize="10sp"
+        android:textColor="@color/text_color"
+        android:gravity="center_vertical"
+        android:layout_marginTop="3dp"
+        />
+
+    <include
+        layout="@layout/split_line_thin"/>
+
+</RelativeLayout>

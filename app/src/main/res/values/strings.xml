@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">约乎</string>
+
+    <string name="non_flows_step_1">连接到我的热点:</string>
+    <string name="non_flows_step_2">打开浏览器输入以下网址:</string>
+    <string name="non_flows_top_titile">请好友按以下步骤，免流量下载约了么</string>
+    <string name="non_flows_bottom_titile">注：若用微信扫描，请在浏览器中打开</string>
+
+    <string name="personal_information">个人信息</string>
+    <string name="edit">编辑</string>
+    <string name="head_portrait">头像</string>
+    <string name="nickname">昵称</string>
+    <string name="sex">性别</string>
+    <string name="age">年龄</string>
+    <string name="phoneNumber">手机号</string>
+    <string name="personalizedSignature">个性签名</string>
+    <string name="credit">信用</string>
+    <string name="BG">BG</string>
+    <string name="department">部门</string>
+    <string name="appointmentReminder">约会提醒</string>
+    <string name="newFollower">新的关注</string>
+    <string name="messageCenter">消息中心</string>
+    <string name="someoneSignUp">有人报名啦</string>
+    <string name="myEnlist">我的报名</string>
+    <string name="settings">设置</string>
+    </resources>
