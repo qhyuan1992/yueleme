@@ -1,8 +1,8 @@
 package com.mini.yueleme.data;
 
 /**
+ * 评论对应的类
  * Created by weiersyuan on 2016/7/24.
- *
  */
 public class RemarkItem {
     public RemarkItem(String content, String user_name) {

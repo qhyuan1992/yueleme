@@ -8,13 +8,9 @@ import com.mini.yueleme.MainActivity;
 import com.mini.yueleme.R;
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,7 +23,6 @@ import com.mini.yueleme.YLMApplication;
 import com.mini.yueleme.adapter.DateItemAdapter;
 import com.mini.yueleme.data.HotDateItem;
 import com.mini.yueleme.data.NewDateItem;
-import com.mini.yueleme.receiver.Actions;
 import com.mini.yueleme.utils.Constant;
 import com.mini.yueleme.utils.DataBaseUtil;
 import com.mini.yueleme.widget.SegmentedControlView;
@@ -44,7 +39,6 @@ import java.util.List;
 public class HomeFragment extends Fragment implements DateItemAdapter.OnItemClickLitener{
 	private static final String TAG = "HomeFragment";
 	private YLMApplication application;
-
 	private int segmentPosition = 0;
 	private String requestUrl = Constant.GET_NEW_DATE_ITEMS_URL + "?op=0&page=" + 1;
 
@@ -55,7 +49,7 @@ public class HomeFragment extends Fragment implements DateItemAdapter.OnItemClic
 	private SegmentedControlView segmentControl;
 	private DateItemAdapter dateItemAdapter;
 
-	private MainActivity activity;
+	// 分页加载
 	private int page = 1;
 
 	private List<? extends DataSupport> dateItems = new ArrayList<NewDateItem>();
@@ -74,7 +68,6 @@ public class HomeFragment extends Fragment implements DateItemAdapter.OnItemClic
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
-		this.activity = (MainActivity) activity;
 		application = (YLMApplication) activity.getApplication();
 	}
 
@@ -101,7 +94,6 @@ public class HomeFragment extends Fragment implements DateItemAdapter.OnItemClic
 		});
 		layoutManager = new LinearLayoutManager(getActivity());
 		recycleView.setLayoutManager(layoutManager);
-		/*下拉刷新*/
 		swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_light,
 				android.R.color.holo_red_light, android.R.color.holo_orange_light,
 				android.R.color.holo_green_light);
@@ -110,6 +102,7 @@ public class HomeFragment extends Fragment implements DateItemAdapter.OnItemClic
 
 		dateItems = DataBaseUtil.queryAllDateItems(0);
 		dateItemAdapter.updateAll(dateItems);
+		// 从数据库拉不到数据就从网络获取
 		if (dateItems.size() <= 0) {
 			new Handler().post(new Runnable() {
 				@Override
@@ -146,11 +139,11 @@ public class HomeFragment extends Fragment implements DateItemAdapter.OnItemClic
 	private class RefreshListener implements SwipeRefreshLayout.OnRefreshListener {
 		@Override
 		public void onRefresh()  {
-			// 网络请求数据
 			getDateItemsFromNet();
 		}
 	}
 
+	// 网络请求最新/最热的约会信息
 	private void getDateItemsFromNet() {
 		JsonObjectRequest getDateItemsPostRequest = new JsonObjectRequest(requestUrl, null,
 				new Response.Listener<JSONObject>() {
@@ -182,8 +175,8 @@ public class HomeFragment extends Fragment implements DateItemAdapter.OnItemClic
 					dateItems = HotDateItem.fromJson2List(jsonObject.getJSONArray(Constant.DATA).toString());
 					sortByTimeHot((List<HotDateItem>) dateItems);
 				}
-
 				dateItemAdapter.updateAll(dateItems);
+				// 写入数据库，扔到线程池处理
 				application.executorService.execute(new Runnable() {
 					@Override
 					public void run() {
@@ -200,6 +193,10 @@ public class HomeFragment extends Fragment implements DateItemAdapter.OnItemClic
 		}
 	}
 
+	/**
+	 * 按照创建时间对约单进行排序
+	 * @param items
+     */
 	private void sortByTimeNew(List<NewDateItem> items) {
 		Collections.sort(items, new Comparator<NewDateItem>() {
 			@Override

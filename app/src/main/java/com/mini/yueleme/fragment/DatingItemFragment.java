@@ -1,7 +1,6 @@
 package com.mini.yueleme.fragment;
 
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -11,7 +10,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -24,13 +22,11 @@ import com.mini.yueleme.YLMApplication;
 import com.mini.yueleme.adapter.MyAppointmentAdapter;
 import com.mini.yueleme.data.DateItem;
 import com.mini.yueleme.data.NewDateItem;
-import com.mini.yueleme.net.NetworkUtil;
 import com.mini.yueleme.utils.Constant;
 import com.mini.yueleme.widget.SegmentedControlView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.litepal.crud.DataSupport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,7 +68,7 @@ public class DatingItemFragment extends Fragment {
         recycleView = (RecyclerView) view.findViewById(R.id.myAppointmentList);
         segmentedControlView = (SegmentedControlView)view.findViewById(R.id.segment_control_my_appointment);
         layoutManager = new LinearLayoutManager(getActivity());
-
+        // 包括发布的约单和参与的约单，点击标签时更改请求的链接
         segmentedControlView.setOnSelectionChangedListener(new SegmentedControlView.OnSelectionChangedListener() {
             @Override
             public void newSelection(String identifier, String value) {
@@ -91,13 +87,13 @@ public class DatingItemFragment extends Fragment {
             }
         });
         recycleView.setLayoutManager(layoutManager);
-		/*下拉刷新*/
         swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_light,
                 android.R.color.holo_red_light, android.R.color.holo_orange_light,
                 android.R.color.holo_green_light);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                // 检查网络
                 if (!application.checkNetWork()) {
                     return;
                 }
@@ -110,6 +106,7 @@ public class DatingItemFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         application = (YLMApplication)getActivity().getApplication();
         requestUrl = Constant.GET_ME_PUBLISHED + application.userID;
+        // 模拟下拉从网络获取数据
         new Handler().post(new Runnable() {
             @Override
             public void run() {
@@ -119,8 +116,8 @@ public class DatingItemFragment extends Fragment {
         });
     }
 
+    // 更新发布/参加过的约单
     private void updatePublishedDate(String url){
-
         StringRequest mStringRequest = new StringRequest(url,
                 new Response.Listener<String>() {
                     @Override

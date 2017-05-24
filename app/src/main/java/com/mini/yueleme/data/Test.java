@@ -8,6 +8,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 /**
+ * 测试Json解析
  * Created by weiersyuan on 2016/7/24.
  */
 public class Test {

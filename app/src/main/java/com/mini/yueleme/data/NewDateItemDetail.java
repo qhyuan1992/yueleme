@@ -6,10 +6,14 @@ import com.google.gson.GsonBuilder;
 import java.util.List;
 
 /**
+ * 约单详情
  * Created by weiersyuan on 2016/7/28.
  */
-public class NewDateItemDetail extends  NewDateItem{
+public class NewDateItemDetail extends NewDateItem{
 
+    /**
+     * 在基本约单信息的基础之上增加一个评论字段
+     */
     private List<RemarkItem> remark;
 
     public static NewDateItemDetail fromJson(String jsonString){

@@ -24,14 +24,14 @@ public abstract class BaseActivity extends Activity {
 		init();
 		context = this;
 	}
-	
+
+	// 初始化Header的控件
 	private void init() {
 		ivLeft = (ImageView) findViewById(R.id.iv_left);
 		title = (TextView) findViewById(R.id.tv_title);
 		midIv = (ImageView) findViewById(R.id.iv_middle);
 		ivRight = (ImageView) findViewById(R.id.iv_right);
 		tvRight = (TextView) findViewById(R.id.tv_right);
-
 		ivLeft.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -40,6 +40,7 @@ public abstract class BaseActivity extends Activity {
 		});
 		setTitle(ivLeft, title, midIv, ivRight, tvRight);
 	}
-	
+
+	// 继承该函数，设置Header状态
 	protected abstract void setTitle(ImageView ivLeft, TextView title, ImageView midIv, ImageView ivRight, TextView tvRight);
 }

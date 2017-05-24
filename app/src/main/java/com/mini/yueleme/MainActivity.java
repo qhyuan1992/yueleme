@@ -114,11 +114,13 @@ public class MainActivity extends BaseActivity implements OnClickListener, Radio
 		}
 	}
 
+	// 发起随机约单
 	private void publishRandonDate() {
 		startActivity(new Intent(context, RandonDateActivity.class));
 		overridePendingTransition(R.anim.activity_open, 0);
 	}
 
+	// 发起正常约单
 	private void publishNormalDate() {
 		startActivity(new Intent(context, NormalDateActivity.class));
 		overridePendingTransition(R.anim.activity_open, 0);
@@ -146,6 +148,7 @@ public class MainActivity extends BaseActivity implements OnClickListener, Radio
 		}
 	}
 
+	// 更改header状态
 	private void changeHeaderStatus(int page) {
 		switch (page) {
 			case 0:
@@ -184,11 +187,13 @@ public class MainActivity extends BaseActivity implements OnClickListener, Radio
 		}
 	}
 
+	// 点击发布约单按钮，弹出PopupWindow
 	private void showPublish() {
 		popWnd.showAtLocation(findViewById(R.id.maincontainer), Gravity.BOTTOM, 0, 100);
 		backgroundAlpha(0.5f);
 	}
 
+	// 初始化PopupWindow
 	private void initPublish() {
 		View popupView = getLayoutInflater().inflate(R.layout.publish_window, null);
 		normalPublish = (Button) popupView.findViewById(R.id.btn_normalPublishDate);
@@ -225,6 +230,7 @@ public class MainActivity extends BaseActivity implements OnClickListener, Radio
 		});
 	}
 
+	// 窗口背景半透明
 	private void backgroundAlpha(float bgAlpha) {
 		WindowManager.LayoutParams lp = getWindow().getAttributes();
 		lp.alpha = bgAlpha;

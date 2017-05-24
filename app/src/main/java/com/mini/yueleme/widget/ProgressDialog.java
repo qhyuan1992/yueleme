@@ -9,6 +9,7 @@ import com.github.ybq.android.spinkit.style.FadingCircle;
 import com.mini.yueleme.R;
 
 /**
+ * 自定义进度对话框
  * Created by weiersyuan on 2016/7/24.
  */
 public class ProgressDialog extends Dialog {

@@ -10,6 +10,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 /**
+ * 最热约单对应的类
  * Created by weiersyuan on 2016/7/26.
  */
 public class HotDateItem extends DataSupport{

@@ -1,6 +1,5 @@
 package com.mini.yueleme.utils;
 
-import com.mini.yueleme.data.FollowedUser;
 import com.mini.yueleme.data.HotDateItem;
 import com.mini.yueleme.data.MessageItem;
 import com.mini.yueleme.data.NewDateItem;
@@ -47,10 +46,12 @@ public class DataBaseUtil {
         DataSupport.saveAll(dateItems);
     }
 
+    // 获取消息中心在本地的缓存信息
     public static List<MessageItem> queryMessageItems() {
         return DataSupport.findAll(MessageItem.class);
     }
 
+    // 缓存消息中心的消息
     public static void cacheMessageItems(List<MessageItem> msgItems) {
         DataSupport.deleteAll(MessageItem.class);
         DataSupport.saveAll(msgItems);

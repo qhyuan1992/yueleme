@@ -12,6 +12,7 @@ import com.mini.yueleme.data.RemarkItem;
 import java.util.List;
 
 /**
+ * 评论适配器
  * Created by bumblebee on 16/7/28.
  */
 public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentHolder> {

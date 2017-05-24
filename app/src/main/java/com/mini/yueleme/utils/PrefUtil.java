@@ -4,6 +4,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
+/**
+ * 封装操作Sharedpreference
+ * Created by weiersyuan on 2016/7/24.
+ */
 public class PrefUtil {
 
 	private Context context;

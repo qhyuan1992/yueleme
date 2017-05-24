@@ -10,6 +10,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 /**
+ * 首页的约单Item对应的类
  * Created by weiersyuan on 2016/7/26.
  */
 public class NewDateItem extends DataSupport{

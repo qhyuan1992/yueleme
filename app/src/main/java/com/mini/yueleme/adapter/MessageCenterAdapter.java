@@ -16,7 +16,7 @@ import org.litepal.crud.DataSupport;
 import java.util.List;
 
 /**
- * Created by bumblebee on 16/7/28.
+ * Created by weiersyuan on 16/7/28.
  */
 public class MessageCenterAdapter extends RecyclerView.Adapter<MessageCenterAdapter.MessageCenterHolder> {
 

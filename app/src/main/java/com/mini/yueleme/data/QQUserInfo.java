@@ -1,6 +1,7 @@
 package com.mini.yueleme.data;
 
 /**
+ * 登录QQ得到的用户的基本信息
  * Created by weiersyuan on 2016/7/23.
  */
 public class QQUserInfo {

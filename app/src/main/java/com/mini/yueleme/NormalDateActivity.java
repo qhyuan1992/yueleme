@@ -103,6 +103,7 @@ public class NormalDateActivity extends  BaseActivity implements View.OnClickLis
         }
     }
 
+    // 显示选择时间的控件
     private void showTimePicker() {
         pvTime.setTime(new Date());
         pvTime.setCyclic(false);
@@ -119,11 +120,12 @@ public class NormalDateActivity extends  BaseActivity implements View.OnClickLis
         pvTime.show();
     }
 
+    // 发布常规的约单信息
     private void publishNormalDate() {
+        // 检查提交参数
         if (!checkParams()) {
             return;
         }
-
         publishDialog.showWithStatus("正在发布");
         JSONObject publishNromalDateParams = generatDateJsonObject();
 
@@ -150,6 +152,7 @@ public class NormalDateActivity extends  BaseActivity implements View.OnClickLis
         application.requestQueue.add(publishNromalDateJsonRequest);
     }
 
+    // 生成约单Json参数
     private JSONObject generatDateJsonObject() {
         JSONObject publishNromalDateParams = new JSONObject();
         try {
@@ -178,6 +181,7 @@ public class NormalDateActivity extends  BaseActivity implements View.OnClickLis
         return publishNromalDateParams;
     }
 
+    // 检查发布约单的参数，参数不合法就提示用户不能发布
     private boolean checkParams() {
         if (subject.getText().toString().trim().equals("")) {
             application.showToastMsg("主题不能为空");

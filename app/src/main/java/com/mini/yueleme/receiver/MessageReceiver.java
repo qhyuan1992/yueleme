@@ -4,23 +4,20 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.mini.yueleme.MainActivity;
 import com.tencent.android.tpush.XGPushBaseReceiver;
 import com.tencent.android.tpush.XGPushClickedResult;
 import com.tencent.android.tpush.XGPushRegisterResult;
 import com.tencent.android.tpush.XGPushShowedResult;
 import com.tencent.android.tpush.XGPushTextMessage;
 
+/**
+ * 信鸽推送的广播接收者，用于处理收到通知或者消息
+ */
 public class MessageReceiver extends XGPushBaseReceiver {
 	public static final String LogTag = "TPushReceiver";
-
-	private void show(Context context, String text) {
-		Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
-	}
 
 	/**
 	 * 用于存储推送通知

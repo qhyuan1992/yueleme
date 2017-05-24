@@ -10,6 +10,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 /**
+ * 消息中心Item对应的类
  * Created by weiersyuan on 2016/7/29.
  */
 public class MessageItem extends DataSupport{

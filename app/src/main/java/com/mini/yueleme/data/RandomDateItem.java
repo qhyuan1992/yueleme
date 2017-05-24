@@ -14,6 +14,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 /**
+ *
  * Created by weiersyuan on 2016/7/26.
  */
 public class RandomDateItem extends DataSupport {

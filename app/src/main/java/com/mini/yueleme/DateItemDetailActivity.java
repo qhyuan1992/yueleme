@@ -40,11 +40,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by weiersyuan on 2016/7/27.
  */
 public class DateItemDetailActivity  extends BaseActivity implements View.OnClickListener{
-
     private static final String TAG = "DateItemDetailActivity";
 
     private CommentAdapter adapter;
-
 
     private SVProgressHUD joinDialog;
     private NewDateItemDetail detailItem;
@@ -88,7 +86,6 @@ public class DateItemDetailActivity  extends BaseActivity implements View.OnClic
 
     private void initView() {
         tvCreateTime = (TextView)findViewById(R.id.tv_datedetail_create_time);
-
         lvRemarks = (RecyclerView) findViewById(R.id.rv_remark);
 
         lvRemarks.setLayoutManager(new LinearLayoutManager(this));
@@ -128,7 +125,7 @@ public class DateItemDetailActivity  extends BaseActivity implements View.OnClic
         application.requestQueue.add(getDateItemsPostRequest);
     }
 
-    // 通过网络获取新的条目更新界面和数据库
+    // 通过网络获取新的条目更新界面
     private void updateDateItemsDetail(JSONObject jsonObject) {
         try {
             if (jsonObject.getInt(Constant.ERROR_CODE) == 0) {
@@ -141,6 +138,7 @@ public class DateItemDetailActivity  extends BaseActivity implements View.OnClic
         }
     }
 
+    // 设置详情页的内容
     private void updateUI(NewDateItemDetail detail) {
         layoutRemark = findViewById(R.id.layout_comment);
         layoutJoin = findViewById(R.id.layout_attend);
@@ -170,10 +168,6 @@ public class DateItemDetailActivity  extends BaseActivity implements View.OnClic
             adapter = new CommentAdapter(detail.getRemarks());
             lvRemarks.setAdapter(adapter);
         }
-
-        //TODO: shifou clickable
-
-
         if (detail.getUser_status() ==1) {
             layoutJoin.setClickable(false);
             tv_added.setTextColor(Color.GRAY);
@@ -240,8 +234,6 @@ public class DateItemDetailActivity  extends BaseActivity implements View.OnClic
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         final String comment = editText.getText().toString();
-                        Log.d(TAG, comment);
-
                         JSONObject infoParams = new JSONObject();
                         try {
                             infoParams.put("date_id", dateId);
@@ -274,67 +266,25 @@ public class DateItemDetailActivity  extends BaseActivity implements View.OnClic
                                 }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError volleyError) {
-                                application.showToastMsg("网络错误，上传信息失败");
                                 syncDialog.showSuccessWithStatus("提交失败");
                             }
                         });
                         application.requestQueue.add(infoJsonObjectRequest);
 
                     }
-                }).
-                        setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-
-                            }
-                        }).show();
+                }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                }).show();
                 break;
             case R.id.iv_right:
                 share2QQFriend();
                 break;
         }
-
     }
 
-    /*
-    if (v.getId() == R.id.ll_bottom) {
-            if (!v.isEnabled()) {
-                application.showToastMsg("无法参与此约会");
-                return;
-            }
-            if (detailItem.getdate_person_num() == detailItem.getDate_join_num()) {
-                application.showToastMsg("报名人数已满,无法参与");
-                return;
-            }
-
-            // 加入
-            JsonObjectRequest getDateItemsPostRequest = new JsonObjectRequest(Constant.REQUEST_JOIN + "?date_id=" + dateId + "&user_id=" + application.userID, null,
-                    new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(JSONObject jsonObject) {
-                            try {
-                                if (jsonObject.getInt("code") == 0) {
-                                    joinDialog.showSuccessWithStatus("报名成功");
-                                }
-                            } catch (JSONException e) {
-
-                            }
-                        }
-                    }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError volleyError) {
-                    application.showToastMsg("服务器异常...");
-                }
-            }
-            );
-            application.requestQueue.add(getDateItemsPostRequest);
-        } else if (v.getId() == R.id.iv_right) {
-            // 分享到QQ好友
-            share2QQFriend();
-        }
-
-    **/
-
+    // 分享给QQ好友
     public void share2QQFriend() {
         Bundle params = new Bundle();
         params.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE, QQShare.SHARE_TO_QQ_TYPE_DEFAULT);
@@ -345,6 +295,7 @@ public class DateItemDetailActivity  extends BaseActivity implements View.OnClic
         application.tencent.shareToQQ(this, params, qqShareListener);
     }
 
+    // 分享到QQZone
     public void share2QQZone() {
         Bundle params = new Bundle();
         params.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE, QQShare.SHARE_TO_QQ_FLAG_QZONE_AUTO_OPEN);
@@ -354,6 +305,7 @@ public class DateItemDetailActivity  extends BaseActivity implements View.OnClic
         application.tencent.shareToQzone(this, params, qqShareListener);
     }
 
+    // 分享结果的回调
     IUiListener qqShareListener = new IUiListener() {
         @Override
         public void onCancel() {

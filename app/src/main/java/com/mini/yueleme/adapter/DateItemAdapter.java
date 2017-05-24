@@ -20,10 +20,7 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
- * Created by bumblebee on 16/7/25.
- *
- */
-/**
+ * 首页所有约单信息的适配器
  * Created by weiersyuan on 2016/7/25.
  */
 public class DateItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  {
@@ -48,10 +45,10 @@ public class DateItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     /**
-     * 全局更新
+     * 局部更新
      * @param position
      */
-    public void updateAll(int position){
+    public void updateLocal(int position){
         notifyItemChanged(position);
     }
 
@@ -62,7 +59,6 @@ public class DateItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         View partyItemView = layoutInflater.inflate(R.layout.item_homepage_2, null);
         ViewHolder viewHolder = new ViewHolder(partyItemView);
         return viewHolder;
@@ -72,7 +68,6 @@ public class DateItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof ViewHolder) {
             DataSupport supportItem = dateItems.get(position);
-
             if (onItemClickLitener != null) {
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -82,7 +77,6 @@ public class DateItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                 });
             }
-
             if (supportItem instanceof NewDateItem) {
                 NewDateItem newItem = (NewDateItem) supportItem;
                 setNewDateItem(holder, newItem);
@@ -109,25 +103,6 @@ public class DateItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         viewHolder.sexNeed.setText(formSexNeed(newItem.getDate_target().getBoy(), newItem.getDate_target().getGirl()));
     }
 
-    public static String formSexNeed(int boy, int girl) {
-        return "男" + boy + "女" + girl;
-    }
-    public static String fromPay(int type) {
-        String result = "";
-        switch (type) {
-            case 0:
-                result = "我请客";
-                break;
-            case 1:
-                result = "AA";
-                break;
-            case 2:
-                result = "求请客";
-                break;
-        }
-        return result;
-    }
-
     private void setHotDateItem(RecyclerView.ViewHolder holder, HotDateItem hotItem) {
         ViewHolder viewHolder = (ViewHolder) holder;
         ImageLoader.getInstance().displayImage(hotItem.getImage_url(),viewHolder.userImage);
@@ -144,6 +119,25 @@ public class DateItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         viewHolder.sexNeed.setText(formSexNeed(hotItem.getDate_target().getBoy(), hotItem.getDate_target().getGirl()));
     }
 
+    public static String formSexNeed(int boy, int girl) {
+        return "男" + boy + "女" + girl;
+    }
+
+    public static String fromPay(int type) {
+        String result = "";
+        switch (type) {
+            case 0:
+                result = "我请客";
+                break;
+            case 1:
+                result = "AA";
+                break;
+            case 2:
+                result = "求请客";
+                break;
+        }
+        return result;
+    }
 
     class ViewHolder extends RecyclerView.ViewHolder {
         private final CircleImageView userImage;
@@ -175,7 +169,7 @@ public class DateItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-
+    // RecycleView没有setOnItemClickListener接口，自定义回调接口
     public void setOnItemClickLitener(OnItemClickLitener mOnItemClickLitener) {
         this.onItemClickLitener = mOnItemClickLitener;
     }

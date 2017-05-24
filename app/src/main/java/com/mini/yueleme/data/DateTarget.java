@@ -3,8 +3,8 @@ package com.mini.yueleme.data;
 import org.litepal.crud.DataSupport;
 
 /**
+ * 每个约单项对应的对男女性别数量的要求
  * Created by weiersyuan on 2016/7/24.
- * 主页上显示的每条约单
  */
 public class DateTarget extends DataSupport{
     private int boy;

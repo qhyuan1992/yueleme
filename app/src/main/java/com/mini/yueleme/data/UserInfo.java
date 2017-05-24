@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder;
 import org.litepal.crud.DataSupport;
 
 /**
+ * 用户信息，缓存到本地
  * Created by weiersyuan on 2016/7/24.
  * 要缓存
  */

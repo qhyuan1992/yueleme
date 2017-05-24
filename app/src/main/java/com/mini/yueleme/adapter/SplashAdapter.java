@@ -7,8 +7,8 @@ import android.widget.ImageView;
 
 import java.util.List;
 /**
+ * 首次登陆导航页
  * Created by weiersyuan on 2016/7/22.
- * 约单详情
  */
 public class SplashAdapter extends PagerAdapter {
 

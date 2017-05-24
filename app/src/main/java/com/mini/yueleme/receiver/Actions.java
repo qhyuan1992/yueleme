@@ -1,6 +1,7 @@
 package com.mini.yueleme.receiver;
 
 /**
+ * 查找数据库完成的广播
  * Created by weiersyuan on 2016/7/26.
  */
 public class Actions {

@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.mini.yueleme.net.NetworkUtil;
 import com.mini.yueleme.utils.PrefUtil;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -23,18 +24,30 @@ public class YLMApplication extends LitePalApplication {
 	public String userName;
 	public String userImageUrl;
 	public String userID;
+	/**
+	 * QQ登录接口的APPID
+	 */
 	public static String APP_ID = "1105558944";
-	public static Context mContext;
+	/**
+	 * 本地保存数据
+	 */
 	public PrefUtil prefUtils;
+	/**
+	 * 全局线程池
+	 */
 	public ExecutorService executorService;
+	/**
+	 * QQ登录相关类
+	 */
 	public Tencent tencent;
 	private Toast toast;
+	/**
+	 * 全局Volley请求队列
+	 */
 	public RequestQueue requestQueue;
 	@Override
 	public void onCreate() {
 		super.onCreate();
-
-		mContext = getApplicationContext();
 		Context context = getApplicationContext();
 		requestQueue = Volley.newRequestQueue(context);
 
@@ -57,6 +70,7 @@ public class YLMApplication extends LitePalApplication {
 		ImageLoader.getInstance().init(config);
 	}
 
+	// 显示Toast
 	public void showToastMsg(String msg) {
 		if (null == msg || "".equals(msg)) {
 			return;
@@ -81,7 +95,7 @@ public class YLMApplication extends LitePalApplication {
 	}
 
 	public boolean checkNetWork() {
-		return true;
+		return NetworkUtil.isNetworkAvailable(this);
 	}
 
 }

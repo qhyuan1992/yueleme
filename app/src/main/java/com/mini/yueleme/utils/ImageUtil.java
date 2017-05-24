@@ -5,6 +5,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.widget.ImageView;
 
 /**
+ * 对ImageView进行模糊化操作
  * Created by weiersyuan on 2016/7/24.
  */
 public class ImageUtil {
@@ -16,6 +17,11 @@ public class ImageUtil {
         setBurryImage(imageView, scale);
     }
 
+    /**
+     * 模糊化ImageView的src
+     * @param imageView
+     * @param scale
+     */
     public static void setBurryImageSrc(ImageView imageView, int scale) {
         if (imageView.getDrawable() == null) return;
         BitmapDrawable originDrawable = (BitmapDrawable)imageView.getDrawable();
@@ -26,6 +32,11 @@ public class ImageUtil {
         imageView.setBackground(drawable);
     }
 
+    /**
+     * 模糊化ImageView的background
+     * @param imageView
+     * @param scale
+     */
     public static void setBurryImage(ImageView imageView, int scale) {
         if (imageView.getBackground() == null) return;
         BitmapDrawable originDrawable = (BitmapDrawable)imageView.getBackground();
@@ -36,6 +47,12 @@ public class ImageUtil {
         imageView.setBackground(drawable);
     }
 
+    /**
+     * 模糊化算法
+     * @param sbitmap
+     * @param radiusf
+     * @return
+     */
     private static Bitmap fastBlur(Bitmap sbitmap, float radiusf){
         if (sbitmap.getWidth() <=0 || sbitmap.getHeight() <= 0) return sbitmap;
         Bitmap bitmap = Bitmap.createScaledBitmap(sbitmap, sbitmap.getWidth()/SCALE,sbitmap.getHeight()/SCALE,false);//先缩放图片，增加模糊速度
@@ -236,5 +253,4 @@ public class ImageUtil {
         bitmap.setPixels(pix, 0, w, 0, 0, w, h);
         return (bitmap);
     }
-
 }

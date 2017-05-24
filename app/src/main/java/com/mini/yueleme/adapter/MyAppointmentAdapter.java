@@ -19,6 +19,7 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
+ * 我的约单详适配器
  * Created by bumblebee on 16/7/26.
  */
 public class MyAppointmentAdapter extends RecyclerView.Adapter<MyAppointmentAdapter.ViewHolder> {

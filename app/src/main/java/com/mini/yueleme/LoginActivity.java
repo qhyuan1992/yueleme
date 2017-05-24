@@ -58,7 +58,7 @@ public class LoginActivity extends Activity {
             }
         });
     }
-
+    // QQ登录回调
     private IUiListener loginListener = new IUiListener() {
         @Override
         public void onComplete(Object response) {
@@ -77,6 +77,7 @@ public class LoginActivity extends Activity {
         }
     };
 
+    // 获取QQ更多信息的回调
     private IUiListener qqUserInfolistener = new IUiListener() {
         @Override
         public void onError(UiError e) {
@@ -108,7 +109,7 @@ public class LoginActivity extends Activity {
         }
     };
 
-    // 登录
+    // 登录自己的后台
     private void login(final QQUserInfo qqUserInfo) throws JSONException {
         loginDialog = new SVProgressHUD(LoginActivity.this);
         loginDialog.showWithStatus("正在登录...");
@@ -146,10 +147,11 @@ public class LoginActivity extends Activity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        // 登陆成功，跳转到主界面
                         finish();
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     }
-                },1000);
+                },500);
 
             }
         }, new Response.ErrorListener() {

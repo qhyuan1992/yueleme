@@ -10,8 +10,8 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 /**
+ * 我关注的人对应的类，要缓存
  * Created by weiersyuan on 2016/7/24.
- * 要缓存
  */
 public class FollowedUser extends DataSupport{
 

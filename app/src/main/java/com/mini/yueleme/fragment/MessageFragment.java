@@ -10,24 +10,19 @@ import com.mini.yueleme.data.MessageItem;
 import com.mini.yueleme.utils.Constant;
 
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MessageFragment extends Fragment{
@@ -36,7 +31,6 @@ public class MessageFragment extends Fragment{
 	private LinearLayoutManager layoutManager;
 	private RecyclerView recycleView;
 	private YLMApplication application;
-
 	List<MessageItem> msgItems = new ArrayList<MessageItem>();
 
 	@Override
@@ -61,10 +55,8 @@ public class MessageFragment extends Fragment{
 
 
 	public void initView(View view) {
-
 		swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.messageSwipeRefreshLayout);
 		recycleView = (RecyclerView) view.findViewById(R.id.messageRecyclerView);
-
 		layoutManager = new LinearLayoutManager(getActivity());
 		recycleView.setLayoutManager(layoutManager);
 		recycleView.setAdapter(adapter);
@@ -74,7 +66,6 @@ public class MessageFragment extends Fragment{
 		swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
 			@Override
 			public void onRefresh() {
-				// http请求，读取数据
 				updateJoinMessage();
 			}
 		});
@@ -82,7 +73,7 @@ public class MessageFragment extends Fragment{
 	private MessageCenterAdapter adapter = new MessageCenterAdapter(msgItems);
 
 	private void updateJoinMessage() {
-
+		// 获取参加你发起的约单的报名信息
 		JsonObjectRequest getJoinMessageRequest = new JsonObjectRequest(Constant.GET_JOIN_MESSAGE + "?user_id=" + application.userID, null,
 				new Response.Listener<JSONObject>() {
 					@Override
@@ -101,6 +92,7 @@ public class MessageFragment extends Fragment{
 		application.requestQueue.add(getJoinMessageRequest);
 	}
 
+	// 根据从网络拉取的消息更新UI
 	private void updateMessageUI(JSONObject jsonObject) {
 		try {
 			if (jsonObject.getInt(Constant.ERROR_CODE) == 0) {

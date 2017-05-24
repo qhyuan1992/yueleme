@@ -40,6 +40,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 /**
+ * 自定义分段控件
  * Created by KLONG on 7/2/2014.
  */
 public class SegmentedControlView extends RadioGroup {
